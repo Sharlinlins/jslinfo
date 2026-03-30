@@ -17,7 +17,7 @@ const AboutUs = () => {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Your Trusted{' '}
-              <span className="animated-text">Technology Partner</span>
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Technology Partner</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               {COMPANY_CONFIG.aboutText}
@@ -32,7 +32,7 @@ const AboutUs = () => {
                 </div>
               ))}
             </div>
-            <button className="btn-primary inline-flex items-center space-x-2">
+            <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105 inline-flex items-center space-x-2">
               <span>Learn More About Us</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -45,10 +45,24 @@ const AboutUs = () => {
               <div className="bg-white rounded-2xl p-8 shadow-xl">
                 <div className="grid grid-cols-2 gap-6">
                   {COMPANY_CONFIG.stats.map((stat, idx) => (
-                    <div key={idx} className="text-center p-4 rounded-xl hover:bg-gray-50 transition">
-                      <div className="text-4xl mb-2">{stat.icon}</div>
-                      <div className="text-3xl font-bold text-indigo-600">{stat.value}</div>
-                      <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
+                    <div key={idx} className="text-center p-4 rounded-xl hover:bg-gray-50 transition group">
+                      <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                      <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                        {stat.value}
+                      </div>
+                      <div className="text-sm font-semibold text-gray-800 mt-1">{stat.label}</div>
+                      <div className="text-xs text-gray-500 mt-1">{stat.description}</div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Additional Stats */}
+                <div className="mt-6 pt-6 border-t border-gray-100 grid grid-cols-2 gap-4">
+                  {COMPANY_CONFIG.additionalStats.map((stat, idx) => (
+                    <div key={idx} className="text-center">
+                      <div className="text-2xl mb-1">{stat.icon}</div>
+                      <div className="text-lg font-bold text-gray-800">{stat.value}</div>
+                      <div className="text-xs text-gray-500">{stat.label}</div>
                     </div>
                   ))}
                 </div>

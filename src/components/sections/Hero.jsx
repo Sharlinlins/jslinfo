@@ -94,10 +94,17 @@ const Hero = ({ scrollToSection }) => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 text-center">
         <div className="animate-fade-in-up">
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-white/20">
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span className="text-white text-sm">Trusted by 500+ companies worldwide</span>
+          </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             {COMPANY_CONFIG.heroTitle}{' '}
-            <span className="animated-text">{COMPANY_CONFIG.heroHighlight}</span>
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              {COMPANY_CONFIG.heroHighlight}
+            </span>
           </h1>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
@@ -107,7 +114,7 @@ const Hero = ({ scrollToSection }) => {
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <button
               onClick={handleExploreClick}
-              className="btn-primary group flex items-center justify-center space-x-2"
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105 inline-flex items-center space-x-2"
             >
               <span>Explore Solutions</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,19 +123,20 @@ const Hero = ({ scrollToSection }) => {
             </button>
             <button
               onClick={handleContactClick}
-              className="btn-outline"
+              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all hover:scale-105"
             >
               Schedule Consultation
             </button>
           </div>
           
-          {/* Stats */}
+          {/* Stats with unique values */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
             {COMPANY_CONFIG.stats.map((stat, idx) => (
-              <div key={idx} className="stat-card p-6 text-center">
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-3xl md:text-4xl font-bold text-white">{stat.value}</div>
-                <div className="text-sm text-gray-300 mt-1">{stat.label}</div>
+              <div key={idx} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition">
+                <div className="text-4xl mb-3">{stat.icon}</div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-300">{stat.label}</div>
+                <div className="text-xs text-gray-400 mt-1">{stat.description}</div>
               </div>
             ))}
           </div>
@@ -136,11 +144,11 @@ const Hero = ({ scrollToSection }) => {
       </div>
       
       {/* Scroll Indicator */}
-      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
           <div className="w-1 h-2 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
