@@ -10,6 +10,7 @@ const AboutUs = () => {
       
       <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* Left Column - Content */}
           <div>
             <div className="inline-flex items-center space-x-2 bg-indigo-100 rounded-full px-4 py-2 mb-6">
               <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
@@ -22,16 +23,22 @@ const AboutUs = () => {
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               {COMPANY_CONFIG.aboutText}
             </p>
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {COMPANY_CONFIG.whyChooseUs.slice(0, 4).map((item, idx) => (
-                <div key={idx} className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600 text-sm">✓</span>
+            
+            {/* Why Choose Us Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Why Choose Us?</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {COMPANY_CONFIG.whyChooseUs.map((item, idx) => (
+                  <div key={idx} className="flex items-center space-x-2">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-green-600 text-sm">✓</span>
+                    </div>
+                    <span className="text-gray-700 text-sm">{item}</span>
                   </div>
-                  <span className="text-gray-700 text-sm font-medium">{item}</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+            
             <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105 inline-flex items-center space-x-2">
               <span>Learn More About Us</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,37 +47,42 @@ const AboutUs = () => {
             </button>
           </div>
           
-          <div className="relative">
-            <div className="gradient-border p-1 rounded-2xl">
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
-                <div className="grid grid-cols-2 gap-6">
-                  {COMPANY_CONFIG.stats.map((stat, idx) => (
-                    <div key={idx} className="text-center p-4 rounded-xl hover:bg-gray-50 transition group">
-                      <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{stat.icon}</div>
-                      <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm font-semibold text-gray-800 mt-1">{stat.label}</div>
-                      <div className="text-xs text-gray-500 mt-1">{stat.description}</div>
-                    </div>
-                  ))}
+          {/* Right Column - Mission & Vision */}
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 shadow-lg">
+              <div className="text-4xl mb-3">🎯</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Our Mission</h3>
+              <p className="text-gray-600">To empower businesses with innovative technology solutions that drive growth, efficiency, and success in the digital age.</p>
+            </div>
+            
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 shadow-lg">
+              <div className="text-4xl mb-3">👁️</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Our Vision</h3>
+              <p className="text-gray-600">To be the world's most trusted technology partner, delivering excellence in every solution we provide.</p>
+            </div>
+            
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-lg">
+              <div className="text-4xl mb-3">💡</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Our Values</h3>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="flex items-center space-x-2">
+                  <span className="text-indigo-600">•</span>
+                  <span className="text-sm text-gray-600">Innovation</span>
                 </div>
-                
-                {/* Additional Stats */}
-                <div className="mt-6 pt-6 border-t border-gray-100 grid grid-cols-2 gap-4">
-                  {COMPANY_CONFIG.additionalStats.map((stat, idx) => (
-                    <div key={idx} className="text-center">
-                      <div className="text-2xl mb-1">{stat.icon}</div>
-                      <div className="text-lg font-bold text-gray-800">{stat.value}</div>
-                      <div className="text-xs text-gray-500">{stat.label}</div>
-                    </div>
-                  ))}
+                <div className="flex items-center space-x-2">
+                  <span className="text-indigo-600">•</span>
+                  <span className="text-sm text-gray-600">Integrity</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-indigo-600">•</span>
+                  <span className="text-sm text-gray-600">Excellence</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-indigo-600">•</span>
+                  <span className="text-sm text-gray-600">Customer First</span>
                 </div>
               </div>
             </div>
-            
-            {/* Floating Element */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full filter blur-2xl opacity-20 animate-float"></div>
           </div>
         </div>
       </div>

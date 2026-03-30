@@ -95,10 +95,10 @@ const Hero = ({ scrollToSection }) => {
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 text-center">
         <div className="animate-fade-in-up">
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-white/20">
+          {/* <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-white/20">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
             <span className="text-white text-sm">Trusted by 500+ companies worldwide</span>
-          </div>
+          </div> */}
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             {COMPANY_CONFIG.heroTitle}{' '}
@@ -129,13 +129,13 @@ const Hero = ({ scrollToSection }) => {
             </button>
           </div>
           
-          {/* Stats with unique values */}
+          {/* Stats Section - ONLY ONE INSTANCE */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
             {COMPANY_CONFIG.stats.map((stat, idx) => (
-              <div key={idx} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition">
-                <div className="text-4xl mb-3">{stat.icon}</div>
+              <div key={idx} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition group">
+                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
                 <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-gray-300">{stat.label}</div>
+                <div className="text-sm text-gray-300 font-medium">{stat.label}</div>
                 <div className="text-xs text-gray-400 mt-1">{stat.description}</div>
               </div>
             ))}
@@ -144,11 +144,11 @@ const Hero = ({ scrollToSection }) => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
           <div className="w-1 h-2 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

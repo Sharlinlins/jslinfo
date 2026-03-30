@@ -242,24 +242,22 @@ export const COMPANY_CONFIG = {
   ],
   aboutText: "We're not just another IT company — we're your strategic technology partner. With a passion for innovation and a commitment to excellence, we help businesses harness the power of technology to achieve their goals. Our team of expert engineers, designers, and consultants work collaboratively to deliver solutions that drive real business value.",
   whyChooseUs: [
-    "🚀 15+ Years of Innovation Excellence",
-    "💼 500+ Successful Projects Delivered",
-    "🌍 Clients Across 25+ Countries",
+    "🚀 5+ Years of Innovation Excellence",
+    "💼 50+ Successful Projects Delivered",
     "⚡ 24/7 Expert Technical Support",
     "🎯 98% Client Satisfaction Rate",
-    "🏆 ISO 9001:2024 Certified",
     "🔒 100% Data Security Guarantee",
     "💡 Innovation-First Approach"
   ],
   stats: [
     { 
-      value: "15+", 
+      value: "5+", 
       label: "Years Experience", 
       icon: "🏆",
       description: "Industry expertise since 2009"
     },
     { 
-      value: "500+", 
+      value: "50+", 
       label: "Projects Delivered", 
       icon: "💼",
       description: "Successful implementations"
@@ -276,11 +274,5 @@ export const COMPANY_CONFIG = {
       icon: "⚡",
       description: "Round-the-clock assistance"
     }
-  ],
-  additionalStats: [
-    { value: "25+", label: "Countries Served", icon: "🌍" },
-    { value: "100%", label: "Data Security", icon: "🔒" },
-    { value: "50+", label: "Expert Team", icon: "👥" },
-    { value: "10K+", label: "Happy Clients", icon: "😊" }
   ]
 };
